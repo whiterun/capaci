@@ -14,7 +14,7 @@
       <div class="text-end">
         @if(!Auth::check())
         <a class="btn btn-outline-light me-2" href="{{url('login')}}" role="button">Sign in</a>
-        <a class="btn btn-warning" href="#signup-modal" role="button">Sign up</a>
+        <a class="btn btn-warning" href="{{url('signup')}}" role="button">Sign up</a>
         @else
         <div class="flex-shrink-0 dropdown">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

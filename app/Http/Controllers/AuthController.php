@@ -11,6 +11,24 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    public function signIn(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
+
     public function signUp(Request $request)
     {
         $validator = Validator::make($request->all(), [

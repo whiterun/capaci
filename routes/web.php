@@ -31,5 +31,6 @@ Route::get('signup', function () {
     return view('signup');
 });
 
+Route::post('signin', [AuthController::class, 'signIn']);
 Route::post('signup', [AuthController::class, 'signUp']);
 Route::get('signout', [AuthController::class, 'signOut']);
