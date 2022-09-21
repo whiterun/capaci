@@ -20,6 +20,7 @@ class VideoFactory extends Factory
             'name' => fake()->realText(100),
             'url' => fake()->url(),
             'description' => fake()->paragraphs(3, true),
+            'duration' => fake()->numberBetween(300, 3600)
         ];
     }
 }
