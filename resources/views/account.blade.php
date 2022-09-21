@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
-    <img class="me-3" src="/docs/5.2/assets/brand/bootstrap-logo-white.svg" alt="" width="48" height="38">
+  <div class="d-flex align-items-center p-3 my-3 text-white rounded shadow-sm">
+    <img class="me-3 rounded-circle" src="https://github.com/octocat.png" alt="" width="48" height="48">
     <div class="lh-1">
-      <h1 class="h6 mb-0 text-white lh-1">Bootstrap</h1>
-      <small>Since 2011</small>
+      <h1 class="h6 mb-0 text-dark lh-1">Your Account Detail</h1>
     </div>
   </div>
 

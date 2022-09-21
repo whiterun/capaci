@@ -24,7 +24,7 @@ Route::get('pricing', function () {
 
 Route::get('account', function () {
     return view('account');
-});
+})->middleware('auth');
 
 Route::get('login', function () {
     return view('login');
