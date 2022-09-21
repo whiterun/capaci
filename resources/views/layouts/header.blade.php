@@ -2,8 +2,8 @@
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+        <li><a href="{{url('/')}}" class="nav-link px-2 text-white">Home</a></li>
+        <li><a href="{{url('/')}}" class="nav-link px-2 text-white">Features</a></li>
         <li><a href="{{url('pricing')}}" class="nav-link px-2 text-white">Pricing</a></li>
       </ul>
 
@@ -12,9 +12,9 @@
       </form>
 
       <div class="text-end">
-        @if(Auth::check())
-        <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#login-modal">Login</button>
-        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#signup-modal">Sign Up</button>
+        @if(!Auth::check())
+        <a class="btn btn-outline-light me-2" href="{{url('login')}}" role="button">Sign in</a>
+        <a class="btn btn-warning" href="#signup-modal" role="button">Sign up</a>
         @else
         <div class="flex-shrink-0 dropdown">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,7 +23,7 @@
           <ul class="dropdown-menu dropdown-menu-lg-end text-small shadow" style="position: absolute; inset: auto 0px 0px auto; margin: 0px; transform: translate(0px, -33.5px);" data-popper-placement="top-end">
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="{{url('signout')}}">Sign out</a></li>
           </ul>
         </div>
         @endif
