@@ -13,7 +13,7 @@
         @section('header')
             @include('layouts.header')
         @show
-        <main class="container">
+        <main class="container col-8">
             @yield('content')
         </main>
     </body>

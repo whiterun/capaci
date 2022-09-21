@@ -27,6 +27,7 @@
             <img src="https://github.com/octocat.png" alt="octocat" class="rounded-circle" width="32" height="32">
           </a>
           <ul class="dropdown-menu dropdown-menu-lg-end text-small shadow">
+            <li><h6 class="dropdown-header">{{Auth::user()->name}}</h6></li>
             <li><a class="dropdown-item" href="{{url('account')}}">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{url('signout')}}">Sign out</a></li>
