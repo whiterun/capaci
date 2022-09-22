@@ -54,4 +54,9 @@ class User extends Authenticatable
             set: fn ($value) => bcrypt($value),
         );
     }
+
+    public function subscriptions()
+    {
+        return $this->belongsToMany(Subscription::class, 'user_subscriptions')->withTimestamps();
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 
+use App\Models\Subscription;
 use App\Models\User;
 
 use Illuminate\Http\Request;
@@ -42,6 +43,10 @@ class AuthController extends Controller
         }
 
         $user = User::create($request->all());
+
+        $subscription = Subscription::find(1);
+
+        $user->subscriptions()->attach(1, ['started_at' => date('Y-m-d H:i:s')]);
 
         Auth::login($user);
 

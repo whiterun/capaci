@@ -17,14 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index']);
-
-Route::get('pricing', function () {
-    return view('pricing');
-});
-
-Route::get('account', function () {
-    return view('account');
-})->middleware('auth');
+Route::get('account', [PageController::class, 'account'])->middleware('auth');
+Route::get('pricing', [PageController::class, 'pricing']);
 
 Route::get('login', function () {
     return view('login');
