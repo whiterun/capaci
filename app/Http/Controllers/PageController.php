@@ -6,7 +6,7 @@ use App\Models\Video;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class PageController extends Controller
 {
     public function index(Request $request)
     {
